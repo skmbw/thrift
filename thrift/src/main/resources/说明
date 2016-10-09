@@ -1,0 +1,3 @@
+grpc的maven插件配置好后，需要在run configuration中配置，maven命令只需要compile即可。
+
+2、thrift自己编译就行了。 thrift --gen java 文件
