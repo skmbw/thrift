@@ -32,6 +32,18 @@
 		    <artifactId>mockito-all</artifactId>
 		    <version>1.10.19</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>io.grpc</groupId>
+		    <artifactId>grpc-auth</artifactId>
+		    <version>1.0.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>io.grpc</groupId>
+		    <artifactId>grpc-testing</artifactId>
+		    <version>1.0.1</version>
+		</dependency>
 
 	</dependencies>
 	<build>

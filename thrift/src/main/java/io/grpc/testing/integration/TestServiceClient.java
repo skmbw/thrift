@@ -31,18 +31,6 @@
 
 package io.grpc.testing.integration;
 
-import com.google.common.io.Files;
-
-import io.grpc.ManagedChannel;
-import io.grpc.internal.GrpcUtil;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
-import io.grpc.okhttp.OkHttpChannelBuilder;
-import io.grpc.okhttp.internal.Platform;
-import io.grpc.testing.TestUtils;
-import io.netty.handler.ssl.SslContext;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.InetAddress;
@@ -51,6 +39,17 @@ import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 
 import javax.net.ssl.SSLSocketFactory;
+
+import com.google.common.io.Files;
+
+import io.grpc.ManagedChannel;
+import io.grpc.internal.GrpcUtil;
+import io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.NegotiationType;
+import io.grpc.netty.NettyChannelBuilder;
+import io.grpc.okhttp.OkHttpChannelBuilder;
+import io.grpc.testing.TestUtils;
+import io.netty.handler.ssl.SslContext;
 
 /**
  * Application that starts a client for the {@link TestServiceGrpc.TestServiceImplBase} and runs
@@ -326,7 +325,7 @@ public class TestServiceClient {
         if (useTls) {
           try {
             SSLSocketFactory factory = useTestCa
-                ? TestUtils.newSslSocketFactoryForCa(Platform.get().getProvider(),
+                ? TestUtils.newSslSocketFactoryForCa(
                     TestUtils.loadCert("ca.pem"))
                 : (SSLSocketFactory) SSLSocketFactory.getDefault();
             builder.sslSocketFactory(factory);
